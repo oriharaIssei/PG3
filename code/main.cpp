@@ -2,24 +2,35 @@
 
 #include <algorithm>
 
-template <typename T>
-T Min(T a,T b){
-	return std::min(a,b);
-};
-template <>
-char Min(char a,char b){
-	printf_s("Not of Number.\n");
-	return 'n';
+const float firstRecursiveSalary = 100.0f;
+const float salary = 1072.0f;
+
+float RecursiveSalary(int workHours,float salary){
+	workHours -= 1;
+	if(workHours <= 0){
+		return 0;
+	}
+	return salary + (salary + RecursiveSalary(workHours,(salary * 2.0f) - 50.0f));
+}
+float NormalSalary(int workHours,float salary){
+	return salary * static_cast<float>(workHours);
 }
 
 int main(){
-	printf_s("Min<int> (36,48) = %d\n",Min<int>(36,48));
+	int workTime = 1;
+	float recursiveSalary = RecursiveSalary(workTime,firstRecursiveSalary);
+	float normalSalary = NormalSalary(workTime,salary);
 
-	printf_s("Min<float> (0.1f,12.0f) = %f\n",Min<float>(0.1f,12.0f));
+	while(recursiveSalary < normalSalary){
+		++workTime;
+		recursiveSalary = RecursiveSalary(workTime,firstRecursiveSalary);
+		normalSalary = NormalSalary(workTime,salary);
+		printf("%d Hours \n",workTime);
+		printf("normalSalary = %f\n",normalSalary);
+		printf("recursiveSalary = %f\n",recursiveSalary);
+		printf("--------------------------------------------------\n");
+	}
 
-	printf_s("Min<double> (0.34,3.14) = %f\n",Min<double>(34,3.14));
-
-	printf_s("Min<char> (x,y) = %c\n",Min<char>('x','y'));
-
+	printf("%d Hours, %f Salary",workTime,recursiveSalary);
 	return 0;
 }
