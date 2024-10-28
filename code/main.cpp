@@ -1,5 +1,8 @@
 #include <cstdio>
 
-int main(){
+#include "Enemy.h"
 
+int main(){
+	Enemy enemy;
+	enemy.Update();
 }
