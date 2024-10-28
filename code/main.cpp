@@ -1,20 +1,15 @@
 #include <cstdio>
 #include <memory>
 
-#include "Figtures.h"
+#include "Shape.h"
 
 int main(){
-	std::unique_ptr<IFigure> figure;
-	figure = std::make_unique<Triangle>();
-	figure->Update();
+	std::unique_ptr<IShape> shape;
+	shape = std::make_unique<Rectangle>(10.0f,20.0f);
+	shape->Size();
+	shape->Draw();
 
-	figure = std::make_unique<Square>();
-	figure->Update();
-	
-	figure = std::make_unique<Pentagon>();
-	figure->Update();
-
-	figure = std::make_unique<Circle>();
-	figure->Update();
-
+	shape = std::make_unique<Circle>(34.0f);
+	shape->Size();
+	shape->Draw();
 }
