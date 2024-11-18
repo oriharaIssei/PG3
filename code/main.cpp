@@ -1,4 +1,4 @@
-#include <cstdio>
+#include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -8,7 +8,19 @@ const std::string fileName = "PG3_2024_03_02.txt";
 std::vector<std::string> LoadText(const std::string& _fileName = fileName);
 
 int main(){
-	std::vector<std::string> numbers = LoadText(fileName);
+	std::vector<std::string> studentIds = LoadText(fileName);
+
+	std::cout << "Sort Before" << std::endl;
+	for(auto& studentId : studentIds){
+		std::cout << studentId << std::endl;
+	}
+
+	std::sort(studentIds.begin(),studentIds.end());
+
+	std::cout << "Sort After" << std::endl;
+	for(auto& studentId : studentIds){
+		std::cout << studentId << std::endl;
+	}
 
 	return 0;
 }
