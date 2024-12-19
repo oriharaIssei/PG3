@@ -17,6 +17,8 @@ project "PG3"
     cppdialect "C++20"
     characterset "Unicode"
 
+    includedirs { "project/code" }
+
     files { "**.h", "**.cpp" }
 
     buildoptions { "/utf-8" }
