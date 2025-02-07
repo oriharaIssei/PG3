@@ -93,6 +93,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="code\main.cpp" />
+    <ClCompile Include="code\MapChip.cpp" />
+    <ClCompile Include="code\Thread\Thread.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="code\MapChip.h" />
+    <ClInclude Include="code\Thread\Thread.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

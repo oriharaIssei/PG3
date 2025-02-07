@@ -9,11 +9,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\code\main.cpp">
-      <Filter>code</Filter>
-    </ClCompile>
     <ClCompile Include="code\main.cpp">
       <Filter>code</Filter>
     </ClCompile>
+    <ClCompile Include="code\Thread\Thread.cpp" />
+    <ClCompile Include="code\MapChip.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="code\Thread\Thread.h" />
+    <ClInclude Include="code\MapChip.h" />
   </ItemGroup>
 </Project>
